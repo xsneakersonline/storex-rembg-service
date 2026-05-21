@@ -1,5 +1,8 @@
-﻿FROM danielgatis/rembg:latest
+FROM danielgatis/rembg:latest
 
 EXPOSE 10000
 
-CMD ["s", "--host", "0.0.0.0", "--port", "10000", "--no-ui"]
+COPY app.py /app/app.py
+WORKDIR /app
+
+CMD ["sh", "-c", "uvicorn app:app --host 0.0.0.0 --port ${PORT:-10000}"]
