@@ -6,7 +6,7 @@ from PIL import Image, ImageOps
 
 app = FastAPI()
 session = None
-MAX_INPUT_SIDE = 1280
+MAX_INPUT_SIDE = 512
 
 
 @app.get("/")
